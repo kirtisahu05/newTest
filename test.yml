@@ -1,7 +1,7 @@
 resources:
    - name: sample_java_repo_test
      type: gitRepo
-     repoPath: deepikasl/sample_java
+     repoPath: ChaitanyaVootla/newTest
      configuration:
         integrationName: github-subint
         branches:
