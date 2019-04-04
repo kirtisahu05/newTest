@@ -1,166 +1,78 @@
 resources:
-   - name: sample_java_repo_test
-     type: gitRepo
-     repoPath: ChaitanyaVootla/newTest
-     configuration:
-        integrationName: github-subint
-        branches:
-           except: "*test"
-           only: "master*"
-        tags:
-           except: none
-           only: none   
-        buildOnCommit: true
-        buildOnPullRequest: false
-        buildOnPullRequestClose: false
-        buildOnRelease: true
-        buildOnTagPush: false
-        buildOnFileCommit: "*test"
-        shallowDepth: 2
-        gitConfig: 
-          - dont_know
-          - dont_know_2
-     initialVersion:
-       sha: master
-   - name: sample_java_file_test
-     type: file
-     fileUrl: text.js
-     configuration:
-        integrationName: docker-int
-     initialVersion:
-       fileName: test
-       fileDtTm: test
-   - name: sample_java_image_test
-     type: image
-     imageName: "library/nginx"
-     configuration:
-       integrationName: docker-int
-     initialVersion:
-       imageTag: latest
-   - name: sample_java_webhook_test
-     type: webhook
-     configuration:
-       integrationName: github-subint
-     initialVersion:
-       payload: test_payload
-   - name: sample_java_kube_test
-     type: cluster
-     configuration:
-       integrationName: kubeIntegration
-       bastionHostIP: 1.2.3.4
-       bastionUser: sshUser
-       bastionIntegrationName: sshKey-int
-       
-pipelines:
-  - name: test_pipeline_1
-    setup:
-      environmentVariables:
-        normal:
-          - ENV1: value-pipe-1
-          - ENV2: value-pipe-2
-        encrypted:
-          - SECURE_ENV1: test_value-pipe-1
-          - SECURE_ENV2: test_value-pipe-2
-      runtime: onHost-pipe
-    steps:
-      - name: in_trigger_step
-        type: runSh
-        configuration:
-          affinityGroup: test_group 
-        setup:
-          environmentVariables:
-            normal:
-              - ENV1: value1
-              - ENV2: value2
-            encrypted:
-              - SECURE_ENV1: test_value
-              - SECURE_ENV2: test_value
-          runtime: onHost
-        execution:
-          onExecute:
-            - echo "executing task command 1"
-            - echo "executing task command 2"
+  - name: gitrepo_res
+    type: gitRepo
+    repoPath: ChaitanyaVootla/newTest
+    configuration:
+      integrationName: git
+      branches:
+        except: random
+    initialVersion:
+      sha: master
 
-      - name: main_step
-        type: runSh
+  - name: file_res
+    type: file
+    fileUrl: https://github.com/ankul-shippable/sample_java/blob/master/shippable.yml
+    configuration:
+      integrationName: github-int
+    initialVersion:
+      fileName: shippable.yml
+      fileDtTm: random_value
+ 
+  - name: image_res
+    type: image
+    imageName: "library/nginx"
+    configuration:
+      integrationName: docker-int
+    initialVersion:
+      imageTag: latest
+
+pipelines:
+  - name: pipe_1
+    setup:
+      runtime: onHost
+    steps:
+      - name: step1_A
+        type: bash
         configuration:
           affinityGroup: test_group 
-          priority: 9999
-          timeoutSeconds: 40
-          cache: true
         setup:
-          environmentVariables:
-            normal:
-              - ENV1: value1
-              - ENV2: value2
-            encrypted:
-              - SECURE_ENV1: test_value
-              - SECURE_ENV2: test_value
           runtime: onHost
         requires:
           integrations:
-            - github-subint
+            - docker-int
+          resources:
+            - image_res
         triggeredBy:
           resources:
-            - sample_java_repo_test
-          steps:
-            - in_trigger_step
-            - sample_java_file_test
+            - gitrepo_res 
         execution:
-          onStart:
-            - echo "Prepping build environment"
           onExecute:
-            - echo "executing task command 1"
-            - echo "executing task command 2"
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
-          onCancel:
-            - echo "Someone cancelled the job"
+            - echo "executing..."
         outputResources:
-          - sample_java_file_test
-          - sample_java_webhook_test
-      - name: other_step
-        type: runSh
+          - file_res
+
+      - name: step1_B
+        type: bash
         configuration:
-          affinityGroup: test_group 
-          priority: 9999
-          timeoutSeconds: 40
-          cache: true
+          affinityGroup: test_group      
         setup:
-          environmentVariables:
-            normal:
-              - ENV1: value11
-              - ENV2: value21
-            encrypted:
-              - SECURE_ENV1: test_value1
-              - SECURE_ENV2: test_value1
           runtime: onHost
-        requires:
-          integrations:
-            - github-subint
         triggeredBy:
           resources:
-            - sample_java_image_test
-          steps:
-            - main_step
+            - file_res 
         execution:
-          onStart:
-            - echo "Prepping build environment"
           onExecute:
-            - echo "executing task command 1"
-            - echo "executing task command 2"
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
-          onCancel:
-            - echo "Someone cancelled the job"
-        outputResources:
-          - sample_java_file_test
-          - sample_java_webhook_test
+            - echo "executing..."
+
+      - name: step1_C
+        type: bash
+        configuration:
+          affinityGroup: test_group      
+        setup:
+          runtime: onHost
+        triggeredBy:
+          steps:
+            - step1_A 
+        execution:
+          onExecute:
+            - echo "executing..."
