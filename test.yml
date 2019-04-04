@@ -26,19 +26,6 @@ resources:
     initialVersion:
       imageTag: latest
 
-  - name: sample_java_webhook_test
-    type: webhook
-    configuration:
-      integrationName: git
-    initialVersion:
-      payload: test_payload
-  - name: sample_java_kube_test
-    type: cluster
-    configuration:
-      integrationName: docker
-      bastionHostIP: 1.2.3.4
-      bastionUser: sshUser
-      bastionIntegrationName: sshKey-int
 pipelines:
   - name: pipe_1
     setup:
@@ -50,6 +37,11 @@ pipelines:
           affinityGroup: test_group 
         setup:
           runtime: onHost
+        requires:
+          integrations:
+            - docker
+          resources:
+            - image_res
         triggeredBy:
           resources:
             - gitrepo_res 
@@ -67,7 +59,7 @@ pipelines:
           runtime: onHost
         triggeredBy:
           resources:
-            - sample_java_webhook_test 
+            - file_res 
         execution:
           onExecute:
             - echo "executing..."
@@ -81,11 +73,6 @@ pipelines:
         triggeredBy:
           steps:
             - step1_A 
-        requires:
-          integrations:
-            - docker
-          resources:
-            - sample_java_kube_test
         execution:
           onExecute:
             - echo "executing..."
