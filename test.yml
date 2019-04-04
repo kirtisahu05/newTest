@@ -39,7 +39,7 @@ pipelines:
           runtime: onHost
         requires:
           integrations:
-            - docker-int
+            - docker
           resources:
             - image_res
         triggeredBy:
