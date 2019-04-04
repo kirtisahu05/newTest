@@ -67,7 +67,7 @@ pipelines:
           runtime: onHost
         triggeredBy:
           resources:
-            - file_res 
+            - sample_java_webhook_test 
         execution:
           onExecute:
             - echo "executing..."
@@ -85,8 +85,6 @@ pipelines:
           integrations:
             - docker
           resources:
-            - image_res
-            - sample_java_webhook_test
             - sample_java_kube_test
         execution:
           onExecute:
