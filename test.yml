@@ -37,9 +37,6 @@ pipelines:
           affinityGroup: test_group 
         setup:
           runtime: onHost
-        requires:
-          resources:
-            - image_res
         triggeredBy:
           resources:
             - gitrepo_res 
@@ -74,6 +71,9 @@ pipelines:
         triggeredBy:
           steps:
             - step1_A 
+        requires:
+          resources:
+            - image_res
         execution:
           onExecute:
             - echo "executing..."
