@@ -38,8 +38,6 @@ pipelines:
         setup:
           runtime: onHost
         requires:
-          integrations:
-            - docker
           resources:
             - image_res
         triggeredBy:
@@ -70,6 +68,9 @@ pipelines:
           affinityGroup: test_group      
         setup:
           runtime: onHost
+        requires:
+          integrations:
+            - docker
         triggeredBy:
           steps:
             - step1_A 
