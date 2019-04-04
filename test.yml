@@ -13,7 +13,7 @@ resources:
     type: file
     fileUrl: https://github.com/ankul-shippable/sample_java/blob/master/shippable.yml
     configuration:
-      integrationName: github-int
+      integrationName: git
     initialVersion:
       fileName: shippable.yml
       fileDtTm: random_value
@@ -22,7 +22,7 @@ resources:
     type: image
     imageName: "library/nginx"
     configuration:
-      integrationName: docker-int
+      integrationName: docker
     initialVersion:
       imageTag: latest
 
