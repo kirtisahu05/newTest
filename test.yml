@@ -51,7 +51,7 @@ pipelines:
         outputResources:
           - file_res
 
-      - name: step1_B
+      - name: step1_B2
         type: bash
         configuration:
           affinityGroup: test_group      
