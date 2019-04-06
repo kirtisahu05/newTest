@@ -11,7 +11,7 @@ resources:
 
   - name: file_res
     type: file
-    fileUrl: https://github.com/ankul-shippable/sample_java/blob/master/shippable.yml
+    fileLocation: https://github.com/ankul-shippable/sample_java/blob/master/shippable.yml
     configuration:
       integrationName: git
     initialVersion:
