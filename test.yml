@@ -36,7 +36,16 @@ pipelines:
         configuration:
           affinityGroup: test_group 
         setup:
-          runtime: onHost
+          runtime:            
+            type: image
+            image:
+              auto: true
+              language: java
+              versions: v1.1
+            custom: 
+              name: test
+              tag:  test
+              options: test
         requires:
           integrations:
             - docker
@@ -56,7 +65,16 @@ pipelines:
         configuration:
           affinityGroup: test_group      
         setup:
-          runtime: onHost
+          runtime:             
+            type: image
+            image:
+              auto: true
+              language: java
+              versions: v1.1
+            custom: 
+              name: test
+              tag:  test
+              options: test
         triggeredBy:
           resources:
             - file_res 
@@ -69,7 +87,16 @@ pipelines:
         configuration:
           affinityGroup: test_group      
         setup:
-          runtime: onHost
+          runtime:             
+            type: image
+            image:
+              auto: true
+              language: java
+              versions: v1.1
+            custom: 
+              name: test
+              tag:  test
+              options: test
         triggeredBy:
           steps:
             - step1_A 
