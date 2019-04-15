@@ -40,8 +40,8 @@ pipelines:
             type: image
             image:
               auto:
-                language: java
-                versions: v1.1
+                language:
+                versions:
             custom: 
               name: test
               tag:  test
@@ -69,8 +69,8 @@ pipelines:
             type: image
             image:
               auto:
-                language: java
-                versions: v1.1
+                language:
+                versions:
             custom: 
               name: test
               tag:  test
@@ -91,8 +91,8 @@ pipelines:
             type: image
             image:
               auto:
-                language: java
-                versions: v1.1
+                language:
+                versions:
             custom: 
               name: test
               tag:  test
