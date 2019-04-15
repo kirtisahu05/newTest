@@ -39,9 +39,9 @@ pipelines:
           runtime:            
             type: image
             image:
-              auto: true
-              language: java
-              versions: v1.1
+              auto:
+                language: java
+                versions: v1.1
             custom: 
               name: test
               tag:  test
@@ -68,9 +68,9 @@ pipelines:
           runtime:             
             type: image
             image:
-              auto: true
-              language: java
-              versions: v1.1
+              auto:
+                language: java
+                versions: v1.1
             custom: 
               name: test
               tag:  test
@@ -90,9 +90,9 @@ pipelines:
           runtime:             
             type: image
             image:
-              auto: true
-              language: java
-              versions: v1.1
+              auto:
+                language: java
+                versions: v1.1
             custom: 
               name: test
               tag:  test
