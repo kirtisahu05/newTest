@@ -17,7 +17,7 @@ resources:
     initialVersion:
       fileName: shippable.yml
       fileDtTm: random_value
- 
+
   - name: image_res
     type: image
     imageName: "library/nginx"
@@ -34,16 +34,16 @@ pipelines:
       - name: step1_A
         type: bash
         configuration:
-          affinityGroup: test_group 
+          affinityGroup: test_group
         setup:
-          runtime:            
+          runtime:
             type: image
             image:
               auto:
                 language: java
                 versions:
                   - 1
-            custom: 
+            custom:
               name: test
               tag:  test
               options: test
@@ -54,7 +54,7 @@ pipelines:
             - image_res
         triggeredBy:
           resources:
-            - gitrepo_res 
+            - gitrepo_res
         execution:
           onExecute:
             - echo "executing..."
@@ -64,22 +64,22 @@ pipelines:
       - name: step1_B2
         type: bash
         configuration:
-          affinityGroup: test_group      
+          affinityGroup: test_group
         setup:
-          runtime:             
+          runtime:
             type: image
             image:
               auto:
                 language: java
                 versions:
                   - 1
-            custom: 
+            custom:
               name: test
               tag:  test
               options: test
         triggeredBy:
           resources:
-            - file_res 
+            - file_res
         execution:
           onExecute:
             - echo "executing..."
@@ -87,22 +87,50 @@ pipelines:
       - name: step1_C
         type: bash
         configuration:
-          affinityGroup: test_group      
+          affinityGroup: test_group
         setup:
-          runtime:             
+          runtime:
             type: image
             image:
               auto:
                 language: java
                 versions:
                   - 1
-            custom: 
+            custom:
               name: test
               tag:  test
               options: test
         triggeredBy:
           steps:
-            - step1_A 
+            - step1_A
         execution:
           onExecute:
             - echo "executing..."
+  - name: pipe_2
+    setup:
+      runtime: onHost
+    steps:
+      - name: step2
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        triggeredBy:
+          resources:
+            - gitrepo_res
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+          - file_res
