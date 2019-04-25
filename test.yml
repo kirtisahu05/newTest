@@ -27,7 +27,7 @@ resources:
       imageTag: latest
 
 pipelines:
-  - name: pipe_main
+  - name: chaitanya_pipeline
     setup:
       runtime: onHost
     steps:
