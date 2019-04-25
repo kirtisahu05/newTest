@@ -49,7 +49,7 @@ pipelines:
               options: test
         requires:
           integrations:
-            - docker
+            - docker_chaitanya
           resources:
             - image_res
         triggeredBy:
