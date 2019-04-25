@@ -3,7 +3,7 @@ resources:
     type: gitRepo
     repoPath: ChaitanyaVootla/newTest
     configuration:
-      integrationName: git
+      integrationName: git_chaitanya
       branches:
         except: random
     initialVersion:
@@ -13,7 +13,7 @@ resources:
     type: file
     fileLocation: https://github.com/ankul-shippable/sample_java/blob/master/shippable.yml
     configuration:
-      integrationName: git
+      integrationName: git_chaitanya
     initialVersion:
       fileName: shippable.yml
       fileDtTm: random_value
@@ -22,7 +22,7 @@ resources:
     type: image
     imageName: "library/nginx"
     configuration:
-      integrationName: docker
+      integrationName: docker_chaitanya
     initialVersion:
       imageTag: latest
 
