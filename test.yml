@@ -721,7 +721,7 @@ pipelines:
     initialVersion:
       imageTag: latest
 
-pipelines:
+
   - name: pipe_1
     setup:
       runtime: onHost
