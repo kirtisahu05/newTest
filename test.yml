@@ -106,3 +106,26 @@ pipelines:
         execution:
           onExecute:
             - echo "executing..."
+
+      - name: step1_D
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        triggeredBy:
+          steps:
+            - step1_B2
+        execution:
+          onExecute:
+            - echo "executing..."
