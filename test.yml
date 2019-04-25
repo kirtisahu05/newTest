@@ -27,7 +27,7 @@ resources:
       imageTag: latest
 
 pipelines:
-  - name: pipe_1
+  - name: pipe_main
     setup:
       runtime: onHost
     steps:
