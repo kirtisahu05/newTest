@@ -162,3 +162,28 @@ pipelines:
         outputResources:
           # - file_res_chaitanya
           - stateResource
+      - name: stateTest2
+        type: bash
+        configuration:
+          affinityGroup: state_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        triggeredBy:
+          steps:
+            - stateTest
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+          # - file_res_chaitanya
+          - stateResource
