@@ -26,6 +26,9 @@ resources:
     initialVersion:
       imageTag: latest
 
+  - name: stateResource
+    type: state
+
 pipelines:
   - name: chaitanya_pipeline
     setup:
@@ -129,3 +132,33 @@ pipelines:
         execution:
           onExecute:
             - echo "executing..."
+
+pipelines:
+  - name: chaitanya_pipeline
+    setup:
+      runtime: onHost
+    steps:
+      - name: step1_A
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        triggeredBy:
+          resources:
+            - stateResource
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+          - file_res_chaitanya
