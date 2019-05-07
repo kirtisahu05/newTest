@@ -161,3 +161,4 @@ pipelines:
             - echo "executing..."
         outputResources:
           - file_res_chaitanya
+          - stateResource
