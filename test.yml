@@ -133,7 +133,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-  - name: chaitanya_pipeline
+  - name: state_pipeline
     setup:
       runtime: onHost
     steps:
