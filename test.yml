@@ -133,15 +133,14 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-pipelines:
   - name: chaitanya_pipeline
     setup:
       runtime: onHost
     steps:
-      - name: step1_A
+      - name: stateTest
         type: bash
         configuration:
-          affinityGroup: test_group
+          affinityGroup: state_group
         setup:
           runtime:
             type: image
