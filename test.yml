@@ -29,6 +29,17 @@ resources:
   - name: stateResource
     type: state
 
+  - name: webhook-res
+    type: webhook
+
+  - name: cluster-res
+    type: cluster
+    configuration:
+      integrationName: kubeIntegration
+      bastionHostIP: 1.2.3.4
+      bastionUser: sshUser
+      bastionIntegrationName: sshKeyIntegration
+
 pipelines:
   - name: chaitanya_pipeline
     setup:
@@ -83,6 +94,7 @@ pipelines:
         triggeredBy:
           resources:
             - file_res_chaitanya
+            - webhook-res
         execution:
           onExecute:
             - echo "executing..."
@@ -127,6 +139,8 @@ pipelines:
               tag:  test
               options: test
         triggeredBy:
+          resources:
+            - cluster-res
           steps:
             - step1_B2
         execution:
