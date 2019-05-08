@@ -31,11 +31,13 @@ resources:
 
   - name: webhook-res
     type: webhook
+    configuration:
+      integrationName: docker_chaitanya
 
   - name: cluster-res
     type: cluster
     configuration:
-      integrationName: kubeIntegration
+      integrationName: docker_chaitanya
       bastionHostIP: 1.2.3.4
       bastionUser: sshUser
       bastionIntegrationName: sshKeyIntegration
