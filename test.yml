@@ -30,108 +30,108 @@ resources:
     type: state
 
 pipelines:
-  # - name: chaitanya_pipeline
-  #   setup:
-  #     runtime: onHost
-  #   steps:
-  #     - name: step1_A
-  #       type: bash
-  #       configuration:
-  #         affinityGroup: test_group
-  #       setup:
-  #         runtime:
-  #           type: image
-  #           image:
-  #             auto:
-  #               language: java
-  #               versions:
-  #                 - 1
-  #           custom:
-  #             name: test
-  #             tag:  test
-  #             options: test
-  #       requires:
-  #         integrations:
-  #           - docker_chaitanya
-  #         resources:
-  #           - image_res_chaitanya
-  #       triggeredBy:
-  #         resources:
-  #           - gitrepo_res_chaitanya
-  #       execution:
-  #         onExecute:
-  #           - echo "executing..."
-  #       outputResources:
-  #         - file_res_chaitanya
+  - name: chaitanya_pipeline
+    setup:
+      runtime: onHost
+    steps:
+      - name: step1_A
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        requires:
+          integrations:
+            - docker_chaitanya
+          resources:
+            - image_res_chaitanya
+        triggeredBy:
+          resources:
+            - gitrepo_res_chaitanya
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+          - file_res_chaitanya
 
-  #     - name: step1_B2
-  #       type: bash
-  #       configuration:
-  #         affinityGroup: test_group
-  #       setup:
-  #         runtime:
-  #           type: image
-  #           image:
-  #             auto:
-  #               language: java
-  #               versions:
-  #                 - 1
-  #           custom:
-  #             name: test
-  #             tag:  test
-  #             options: test
-  #       triggeredBy:
-  #         resources:
-  #           - file_res_chaitanya
-  #       execution:
-  #         onExecute:
-  #           - echo "executing..."
+      - name: step1_B2
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        triggeredBy:
+          resources:
+            - file_res_chaitanya
+        execution:
+          onExecute:
+            - echo "executing..."
 
-  #     - name: step1_C
-  #       type: bash
-  #       configuration:
-  #         affinityGroup: test_group
-  #       setup:
-  #         runtime:
-  #           type: image
-  #           image:
-  #             auto:
-  #               language: java
-  #               versions:
-  #                 - 1
-  #           custom:
-  #             name: test
-  #             tag:  test
-  #             options: test
-  #       triggeredBy:
-  #         steps:
-  #           - step1_A
-  #       execution:
-  #         onExecute:
-  #           - echo "executing..."
+      - name: step1_C
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        triggeredBy:
+          steps:
+            - step1_A
+        execution:
+          onExecute:
+            - echo "executing..."
 
-  #     - name: step1_D
-  #       type: bash
-  #       configuration:
-  #         affinityGroup: test_group
-  #       setup:
-  #         runtime:
-  #           type: image
-  #           image:
-  #             auto:
-  #               language: java
-  #               versions:
-  #                 - 1
-  #           custom:
-  #             name: test
-  #             tag:  test
-  #             options: test
-  #       triggeredBy:
-  #         steps:
-  #           - step1_B2
-  #       execution:
-  #         onExecute:
-  #           - echo "executing..."
+      - name: step1_D
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        triggeredBy:
+          steps:
+            - step1_B2
+        execution:
+          onExecute:
+            - echo "executing..."
 
   - name: state_pipeline
     setup:
