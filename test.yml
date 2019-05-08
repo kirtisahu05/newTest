@@ -33,6 +33,8 @@ resources:
     type: webhook
     configuration:
       integrationName: docker_chaitanya
+    initialVersion:
+      payload: "asd"
 
   - name: cluster-res
     type: cluster
