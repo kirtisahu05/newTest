@@ -127,6 +127,30 @@ pipelines:
           onExecute:
             - echo "executing..."
 
+      - name: step1_B4
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions:
+                  - 1
+            custom:
+              name: test
+              tag:  test
+              options: test
+        triggeredBy:
+          resources:
+            - file_res_chaitanya
+            - webhookRes
+        execution:
+          onExecute:
+            - echo "executing..."
+
       - name: c-step1_C
         type: bash
         configuration:
