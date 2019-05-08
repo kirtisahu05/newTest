@@ -29,14 +29,14 @@ resources:
   - name: stateResource
     type: state
 
-  - name: webhook-res
+  - name: webhookRes
     type: webhook
     configuration:
       integrationName: docker_chaitanya
     initialVersion:
       payload: "asd"
 
-  - name: cluster-res
+  - name: clusterRes
     type: cluster
     configuration:
       integrationName: docker_chaitanya
@@ -98,7 +98,7 @@ pipelines:
         triggeredBy:
           resources:
             - file_res_chaitanya
-            - webhook-res
+            - webhookRes
         execution:
           onExecute:
             - echo "executing..."
@@ -144,7 +144,7 @@ pipelines:
               options: test
         triggeredBy:
           resources:
-            - cluster-res
+            - clusterRes
           steps:
             - step1_B2
         execution:
