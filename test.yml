@@ -1,9 +1,9 @@
 resources:
   - name: gitrepo_res_chaitanya
     type: gitRepo
-    repoPath: ChaitanyaVootla/newTest
+    repoPath: kirtisahu05/newTest
     configuration:
-      integrationName: git_chaitanya
+      integrationName: git_kirti
       branches:
         except: random
     initialVersion:
@@ -13,7 +13,7 @@ resources:
     type: file
     fileLocation: https://github.com/ankul-shippable/sample_java/blob/master/shippable.yml
     configuration:
-      integrationName: git_chaitanya
+      integrationName: git_kirti
     initialVersion:
       fileName: shippable.yml
       fileDtTm: random_value
@@ -22,7 +22,7 @@ resources:
     type: image
     imageName: "library/nginx"
     configuration:
-      integrationName: docker_chaitanya
+      integrationName: docker_kirti
     initialVersion:
       imageTag: latest
 
@@ -32,14 +32,14 @@ resources:
   - name: webhookRes
     type: webhook
     configuration:
-      integrationName: docker_chaitanya
+      integrationName: docker_kirti
     initialVersion:
       payload: "asd"
 
   - name: clusterRes
     type: cluster
     configuration:
-      integrationName: docker_chaitanya
+      integrationName: docker_kirti
       bastionHostIP: 1.2.3.4
       bastionUser: sshUser
       bastionIntegrationName: sshKeyIntegration
@@ -67,7 +67,7 @@ pipelines:
               options: test
         requires:
           integrations:
-            - docker_chaitanya
+            - docker_kirti
           resources:
             - image_res_chaitanya
         triggeredBy:
