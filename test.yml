@@ -49,7 +49,7 @@ pipelines:
     setup:
       runtime: onHost
     steps:
-      - name: c-step1_A
+      - name: c_step1_A
         type: bash
         configuration:
           affinityGroup: test_group
@@ -79,7 +79,7 @@ pipelines:
         outputResources:
           - file_res_chaitanya
 
-      - name: c-step1_B2
+      - name: c_step1_B2
         type: bash
         configuration:
           affinityGroup: test_group
@@ -199,7 +199,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: c-step1_C
+      - name: c_step1_C
         type: bash
         configuration:
           affinityGroup: test_group
@@ -222,7 +222,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: c-step1_D
+      - name: c_step1_D
         type: bash
         configuration:
           affinityGroup: test_group
