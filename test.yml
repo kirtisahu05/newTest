@@ -1,24 +1,24 @@
 resources:
-  - name: gitrepo_res_chaitanya
+  - name: gitrepo_res_kirti
     type: gitRepo
     repoPath: kirtisahu05/newTest
     configuration:
-      integrationName: git_kirti
+      integrationName: github_kirti
       branches:
         except: random
     initialVersion:
       sha: master
 
-  - name: file_res_chaitanya
+  - name: file_res_kirti
     type: file
     fileLocation: https://github.com/ankul-shippable/sample_java/blob/master/shippable.yml
     configuration:
-      integrationName: git_kirti
+      integrationName: github_kirti
     initialVersion:
       fileName: shippable.yml
       fileDtTm: random_value
 
-  - name: image_res_chaitanya
+  - name: image_res_kirti
     type: image
     imageName: "library/nginx"
     configuration:
@@ -45,7 +45,7 @@ resources:
       bastionIntegrationName: sshKeyIntegration
 
 pipelines:
-  - name: chaitanya_pipeline
+  - name: newTest_pipeline_kirti
     setup:
       runtime: onHost
     steps:
@@ -69,15 +69,15 @@ pipelines:
           integrations:
             - docker_kirti
           resources:
-            - image_res_chaitanya
+            - image_res_kirti
         triggeredBy:
           resources:
-            - gitrepo_res_chaitanya
+            - gitrepo_res_kirti
         execution:
           onExecute:
             - echo "executing..."
         outputResources:
-          - file_res_chaitanya
+          - file_res_kirti
 
       - name: c_step1_B2
         type: bash
@@ -97,7 +97,7 @@ pipelines:
               options: test
         triggeredBy:
           resources:
-            - file_res_chaitanya
+            - file_res_kirti
             - webhookRes
         execution:
           onExecute:
@@ -121,7 +121,7 @@ pipelines:
               options: test
         triggeredBy:
           resources:
-            - file_res_chaitanya
+            - file_res_kirti
             - webhookRes
         execution:
           onExecute:
@@ -145,7 +145,7 @@ pipelines:
               options: test
         triggeredBy:
           resources:
-            - file_res_chaitanya
+            - file_res_kirti
             - webhookRes
         execution:
           onExecute:
@@ -169,7 +169,7 @@ pipelines:
               options: test
         triggeredBy:
           resources:
-            - file_res_chaitanya
+            - file_res_kirti
             - webhookRes
         execution:
           onExecute:
@@ -193,7 +193,7 @@ pipelines:
               options: test
         triggeredBy:
           resources:
-            - file_res_chaitanya
+            - file_res_kirti
             - webhookRes
         execution:
           onExecute:
@@ -274,7 +274,7 @@ pipelines:
           onExecute:
             - echo "executing..."
         outputResources:
-          # - file_res_chaitanya
+          # - file_res_kirti
           - stateResource
       - name: stateTest2
         type: bash
@@ -299,5 +299,5 @@ pipelines:
           onExecute:
             - echo "executing..."
         outputResources:
-          # - file_res_chaitanya
+          # - file_res_kirti
           - stateResource
