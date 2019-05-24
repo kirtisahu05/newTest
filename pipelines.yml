@@ -46,7 +46,7 @@ pipelines:
     setup:
       runtime: onHost
     steps:
-      - name: c_step1_A
+      - name: step_1
         type: bash
         configuration:
           affinityGroup: test_group
@@ -71,7 +71,7 @@ pipelines:
         outputResources:
           # - file_res_kirti
 
-      - name: c_step1_B2
+      - name: step_2
         type: bash
         configuration:
           affinityGroup: test_group
@@ -90,7 +90,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: c_step1_B3
+      - name: step_3
         type: bash
         configuration:
           affinityGroup: test_group
@@ -109,7 +109,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: c_step1_B4
+      - name: step_4
         type: bash
         configuration:
           affinityGroup: test_group
@@ -128,7 +128,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: c_step1_B5
+      - name: step_5
         type: bash
         configuration:
           affinityGroup: test_group
@@ -147,7 +147,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: c_step1_B6
+      - name: step_6
         type: bash
         configuration:
           affinityGroup: test_group
@@ -166,7 +166,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: c_step1_B7
+      - name: step_7
         type: bash
         configuration:
           affinityGroup: test_group
@@ -179,12 +179,12 @@ pipelines:
                 versions: [ver_2]
         triggeredBy:
           steps:
-            - c_step1_A
+            - step_2
         execution:
           onExecute:
             - echo "executing..."
 
-      - name: c_step1_D
+      - name: step_8
         type: bash
         configuration:
           affinityGroup: test_group
@@ -199,7 +199,7 @@ pipelines:
           resources:
             - clusterRes
           steps:
-            - c_step1_B2
+            - step_4
         execution:
           onExecute:
             - echo "executing..."
