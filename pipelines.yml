@@ -12,10 +12,10 @@ resources:
   - name: file_res_kirti
     type: file
     fileLocation: https://github.com/kirtisahu05/newTest/edit/master/pipelines.yml
+    fileName: pipeline.yml
     configuration:
       integrationName: github_kirti
     initialVersion:
-      fileName: pipeline.yml
       fileDtTm: random_value
 
   - name: image_res_kirti
