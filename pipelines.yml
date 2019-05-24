@@ -56,12 +56,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver_7
         requires:
           integrations:
             - docker_kirti
@@ -86,12 +81,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver_4
         triggeredBy:
           resources:
             - file_res_kirti
@@ -110,12 +100,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver_2
         triggeredBy:
           resources:
             - file_res_kirti
@@ -134,12 +119,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver
         triggeredBy:
           resources:
             - file_res_kirti
@@ -158,12 +138,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver_5
         triggeredBy:
           resources:
             - file_res_kirti
@@ -182,12 +157,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver_6
         triggeredBy:
           resources:
             - file_res_kirti
@@ -206,12 +176,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver_2
         triggeredBy:
           steps:
             - c_step1_A
@@ -229,12 +194,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver_4
         triggeredBy:
           resources:
             - clusterRes
@@ -258,12 +218,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
-              options: test
+                versions: ver_5
         triggeredBy:
           resources:
             - stateResource
@@ -283,11 +238,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions:
-                  - 1
-            custom:
-              name: test
-              tag:  test
+                versions: ver_8
               options: test
         triggeredBy:
           steps:
