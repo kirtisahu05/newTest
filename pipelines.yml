@@ -221,13 +221,11 @@ pipelines:
                 versions: [ver_5]
         triggeredBy:
           resources:
-            - stateResource
         execution:
           onExecute:
             - echo "executing..."
         outputResources:
           # - file_res_kirti
-          - stateResource
       - name: stateTest2
         type: bash
         configuration:
@@ -246,5 +244,4 @@ pipelines:
           onExecute:
             - echo "executing..."
         outputResources:
-          # - file_res_kirti
-          - stateResource
+           - file_res_kirti
