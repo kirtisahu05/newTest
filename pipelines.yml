@@ -157,7 +157,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions: ver_6
+                versions: [ver_6]
         triggeredBy:
           resources:
             - file_res_kirti
@@ -176,7 +176,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions: ver_2
+                versions: [ver_2]
         triggeredBy:
           steps:
             - c_step1_A
@@ -194,7 +194,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions: ver_4
+                versions: [ver_4]
         triggeredBy:
           resources:
             - clusterRes
@@ -218,7 +218,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions: ver_5
+                versions: [ver_5]
         triggeredBy:
           resources:
             - stateResource
@@ -238,8 +238,7 @@ pipelines:
             image:
               auto:
                 language: java
-                versions: ver_8
-              options: test
+                versions: [ver_8]
         triggeredBy:
           steps:
             - stateTest
