@@ -100,7 +100,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: step1_B3
+      - name: c_step1_B3
         type: bash
         configuration:
           affinityGroup: test_group
@@ -124,7 +124,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: step1_B4
+      - name: c_step1_B4
         type: bash
         configuration:
           affinityGroup: test_group
@@ -148,7 +148,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: step1_B5
+      - name: c_step1_B5
         type: bash
         configuration:
           affinityGroup: test_group
@@ -172,7 +172,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: step1_B6
+      - name: c_step1_B6
         type: bash
         configuration:
           affinityGroup: test_group
@@ -196,7 +196,7 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: c_step1_C
+      - name: c_step1_B7
         type: bash
         configuration:
           affinityGroup: test_group
@@ -214,7 +214,7 @@ pipelines:
               options: test
         triggeredBy:
           steps:
-            - c-step1_A
+            - c_step1_A
         execution:
           onExecute:
             - echo "executing..."
@@ -239,7 +239,7 @@ pipelines:
           resources:
             - clusterRes
           steps:
-            - c-step1_B2
+            - c_step1_B2
         execution:
           onExecute:
             - echo "executing..."
