@@ -11,11 +11,11 @@ resources:
 
   - name: file_res_kirti
     type: file
-    fileLocation: https://github.com/ankul-shippable/sample_java/blob/master/shippable.yml
+    fileLocation: https://github.com/kirtisahu05/newTest/edit/master/pipelines.yml
     configuration:
       integrationName: github_kirti
     initialVersion:
-      fileName: shippable.yml
+      fileName: pipeline.yml
       fileDtTm: random_value
 
   - name: image_res_kirti
@@ -25,9 +25,6 @@ resources:
       integrationName: docker_kirti
     initialVersion:
       imageTag: latest
-
-  - name: stateResource
-    type: state
 
   - name: webhookRes
     type: webhook
