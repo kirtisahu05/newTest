@@ -109,44 +109,6 @@ pipelines:
           onExecute:
             - echo "executing..."
 
-      - name: step_4
-        type: bash
-        configuration:
-          affinityGroup: test_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_11]
-        triggeredBy:
-          resources:
-            # - file_res_kirti
-            - webhookRes
-        execution:
-          onExecute:
-            - echo "executing..."
-
-      - name: step_5
-        type: bash
-        configuration:
-          affinityGroup: test_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_9]
-        triggeredBy:
-          resources:
-            # - file_res_kirti
-            - webhookRes
-        execution:
-          onExecute:
-            - echo "executing..."
-
   - name: state_pipeline
     setup:
       runtime: onHost
