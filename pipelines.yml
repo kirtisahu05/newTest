@@ -70,6 +70,154 @@ pipelines:
             - echo "executing..."
         outputResources:
            - file_res_kirti
+  
+  - name: newTest_pipeline_kirti-1
+    setup:
+      runtime: onHost
+    steps:
+      - name: step_1
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions: [ver_7]
+        requires:
+          integrations:
+            - docker_kirti
+          resources:
+            - image_res_kirti
+        triggeredBy:
+          resources:
+            - gitrepo_res_kirti
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+           - file_res_kirti
+  
+  - name: newTest_pipeline_kirti-2
+    setup:
+      runtime: onHost
+    steps:
+      - name: step_1
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions: [ver_7]
+        requires:
+          integrations:
+            - docker_kirti
+          resources:
+            - image_res_kirti
+        triggeredBy:
+          resources:
+            - gitrepo_res_kirti
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+           - file_res_kirti
+  
+  
+  - name: newTest_pipeline_kirti-3
+    setup:
+      runtime: onHost
+    steps:
+      - name: step_1
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions: [ver_7]
+        requires:
+          integrations:
+            - docker_kirti
+          resources:
+            - image_res_kirti
+        triggeredBy:
+          resources:
+            - gitrepo_res_kirti
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+           - file_res_kirti
+           
+  
+  - name: newTest_pipeline_kirti-4
+    setup:
+      runtime: onHost
+    steps:
+      - name: step_1
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions: [ver_7]
+        requires:
+          integrations:
+            - docker_kirti
+          resources:
+            - image_res_kirti
+        triggeredBy:
+          resources:
+            - gitrepo_res_kirti
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+           - file_res_kirti
+         
+  
+  - name: newTest_pipeline_kirti-5
+    setup:
+      runtime: onHost
+    steps:
+      - name: step_1
+        type: bash
+        configuration:
+          affinityGroup: test_group
+        setup:
+          runtime:
+            type: image
+            image:
+              auto:
+                language: java
+                versions: [ver_7]
+        requires:
+          integrations:
+            - docker_kirti
+          resources:
+            - image_res_kirti
+        triggeredBy:
+          resources:
+            - gitrepo_res_kirti
+        execution:
+          onExecute:
+            - echo "executing..."
+        outputResources:
+           - file_res_kirti
 
   - name: state_pipeline
     setup:
@@ -92,7 +240,7 @@ pipelines:
           onExecute:
             - echo "executing..."
         outputResources:
-          # - file_res_kirti
+           - file_res_kirti
       - name: stateTest2
         type: bash
         configuration:
@@ -111,4 +259,4 @@ pipelines:
           onExecute:
             - echo "executing..."
         outputResources:
-           # - file_res_kirti
+            - file_res_kirti
