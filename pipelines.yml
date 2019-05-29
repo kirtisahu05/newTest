@@ -6,7 +6,7 @@ resources:
       integrationName: github_kirti
       branches:
         except: random
-    initialVersion:
+    version:
       sha: master
 
   - name: file_res_kirti
@@ -15,7 +15,7 @@ resources:
     fileName: pipeline.yml
     configuration:
       integrationName: github_kirti
-    initialVersion:
+    version:
       fileDtTm: random_value
 
   - name: image_res_kirti
@@ -23,14 +23,14 @@ resources:
     imageName: "library/nginx"
     configuration:
       integrationName: docker_kirti
-    initialVersion:
+    version:
       imageTag: latest
 
   - name: webhookRes
     type: webhook
     configuration:
       integrationName: docker_kirti
-    initialVersion:
+    version:
       payload: "asd"
 
   - name: clusterRes
