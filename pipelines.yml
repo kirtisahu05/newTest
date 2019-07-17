@@ -1,262 +1,92 @@
 resources:
-  - name: gitrepo_res_kirti
-    type: gitRepo
-    repoPath: kirtisahu05/newTest
+  - name: Image_test
+    type: Image
     configuration:
-      integrationName: github_kirti
-      branches:
-        except: random
-    version:
-      sha: master
-
-  - name: file_res_kirti
-    type: file
-    fileLocation: https://github.com/kirtisahu05/newTest/edit/master/pipelines.yml
-    fileName: pipeline.yml
+       registry: docker_kirti
+       imageName: imageRepo/imageName
+       imageTag: initial
+  - name: gitResource_test
+    type: GitRepo
     configuration:
-      integrationName: github_kirti
-    version:
-      fileDtTm: random_value
-
-  - name: image_res_kirti
-    type: image
-    imageName: "library/nginx"
+      gitProvider: github_kirti
+      path: kirtisahu05/ymlTest
+  - name: myBuildInfo
+    type: BuildInfo
     configuration:
-      integrationName: docker_kirti
-    version:
-      imageTag: latest
-
-  - name: webhookRes
-    type: webhook
+      sourceArtifactory: art
+      buildName: myBuild
+      buildNumber: 123
+  - name: webhookIntegrationResource
+    type: Webhook
     configuration:
-      integrationName: docker_kirti
-    version:
-      payload: "asd"
-
-  - name: clusterRes
-    type: cluster
+      webhookName: myInternal
+      payload: "webhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegration"
+  - name: RemoteFile
+    type: RemoteFile
+    configuration:      
+      source: dummyFileServer
+      fileLocation: 'fileLocation_test'
+      fileName: 'fileName_test'
+      fileDateTime: 'fileDateTime_test'
+  - name: VmCluster
+    type: VmCluster
     configuration:
-      integrationName: docker_kirti
-      bastionHostIP: 1.2.3.4
-      bastionUser: sshUser
-      bastionIntegrationName: sshKeyIntegration
+      sshKey: ssh_key_test
+      targets:
+        - 1.2.3.4
+        - 1.2.3.5
+        - 1.2.3.6
+  - name: Aql
+    type: Aql
+    configuration:
+      sourceArtifactory: art
+      query: 'query_test'
+      addedProperties: #optional
+        key1: val1
+        key2: val2
+      mappings: #optional
+        - name: mapping1
+          input: asd
+          output: asd
+        - name: mapping2
+          input: asd
+          output: asd
+  - name: ReleaseBundle
+    type: ReleaseBundle
+    configuration:
+      sourceDistribution: dist_test
+      name: 'name_test'
+      version: 'version_test'
+      isSigned: false
+  - name: DistributionRule
+    type: DistributionRule
+    configuration:     
+      sourceDistribution: dist_test     
+      serviceName: 'service_test'
+      siteName: 'site_name'
+      cityName: 'city_name'
+      countryCodes:
+        - 'IN'
+        - 'AUS'
 
 pipelines:
-  - name: newTest_pipeline_kirti
-    setup:
-      runtime: onHost
+  - name: res_test
     steps:
-      - name: step_1
-        type: bash
+      - name: job
+        type: Bash
         configuration:
-          affinityGroup: test_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_7]
-        requires:
-          integrations:
-            - docker_kirti
-          resources:
-            - image_res_kirti
-        triggeredBy:
-          resources:
-            - gitrepo_res_kirti
+          affinityGroup: bldGroupTest
+          priority: 0
+          inputResources:
+            - name: Image_test
+            - name: gitResource_test
+            - name: myBuildInfo
+            - name: webhookIntegrationResource
+            - name: RemoteFile
+            - name: VmCluster
+            - name: Aql
+            - name: ReleaseBundle
+            - name: DistributionRule
         execution:
           onExecute:
-            - echo "executing..."
-        outputResources:
-           - file_res_kirti
-  
-  - name: newTest_pipeline_kirti-1
-    setup:
-      runtime: onHost
-    steps:
-      - name: step_1
-        type: bash
-        configuration:
-          affinityGroup: test_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_7]
-        requires:
-          integrations:
-            - docker_kirti
-          resources:
-            - image_res_kirti
-        triggeredBy:
-          resources:
-            - gitrepo_res_kirti
-        execution:
-          onExecute:
-            - echo "executing..."
-        outputResources:
-           - file_res_kirti
-  
-  - name: newTest_pipeline_kirti-2
-    setup:
-      runtime: onHost
-    steps:
-      - name: step_1
-        type: bash
-        configuration:
-          affinityGroup: test_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_7]
-        requires:
-          integrations:
-            - docker_kirti
-          resources:
-            - image_res_kirti
-        triggeredBy:
-          resources:
-            - gitrepo_res_kirti
-        execution:
-          onExecute:
-            - echo "executing..."
-        outputResources:
-           - file_res_kirti
-  
-  
-  - name: newTest_pipeline_kirti-3
-    setup:
-      runtime: onHost
-    steps:
-      - name: step_1
-        type: bash
-        configuration:
-          affinityGroup: test_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_7]
-        requires:
-          integrations:
-            - docker_kirti
-          resources:
-            - image_res_kirti
-        triggeredBy:
-          resources:
-            - gitrepo_res_kirti
-        execution:
-          onExecute:
-            - echo "executing..."
-        outputResources:
-           - file_res_kirti
-           
-  
-  - name: newTest_pipeline_kirti-4
-    setup:
-      runtime: onHost
-    steps:
-      - name: step_1
-        type: bash
-        configuration:
-          affinityGroup: test_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_7]
-        requires:
-          integrations:
-            - docker_kirti
-          resources:
-            - image_res_kirti
-        triggeredBy:
-          resources:
-            - gitrepo_res_kirti
-        execution:
-          onExecute:
-            - echo "executing..."
-        outputResources:
-           - file_res_kirti
-         
-  
-  - name: newTest_pipeline_kirti-5
-    setup:
-      runtime: onHost
-    steps:
-      - name: step_1
-        type: bash
-        configuration:
-          affinityGroup: test_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_7]
-        requires:
-          integrations:
-            - docker_kirti
-          resources:
-            - image_res_kirti
-        triggeredBy:
-          resources:
-            - gitrepo_res_kirti
-        execution:
-          onExecute:
-            - echo "executing..."
-        outputResources:
-           - file_res_kirti
-
-  - name: state_pipeline
-    setup:
-      runtime: onHost
-    steps:
-      - name: stateTest
-        type: bash
-        configuration:
-          affinityGroup: state_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_5]
-        triggeredBy:
-          resources:
-        execution:
-          onExecute:
-            - echo "executing..."
-        outputResources:
-           - file_res_kirti
-      - name: stateTest2
-        type: bash
-        configuration:
-          affinityGroup: state_group
-        setup:
-          runtime:
-            type: image
-            image:
-              auto:
-                language: java
-                versions: [ver_8]
-        triggeredBy:
-          steps:
-            - stateTest
-        execution:
-          onExecute:
-            - echo "executing..."
-        outputResources:
-            - file_res_kirti
+            - echo "asd"
