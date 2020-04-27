@@ -39,7 +39,7 @@ resources:
     type: Aql
     configuration:
       sourceArtifactory: art
-      query: 'query_test'
+      query: 'query_test_123'
       addedProperties: #optional
         key1: val1
         key2: val2
