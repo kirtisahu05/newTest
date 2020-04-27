@@ -17,7 +17,7 @@ resources:
       buildName: myBuild
       buildNumber: 123
   - name: webhookIntegrationResource
-    type: Webhook
+    type: IncomingWebhook
     configuration:
       webhookName: myInternal
       payload: "webhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegrationwebhookIntegration"
