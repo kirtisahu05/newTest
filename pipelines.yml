@@ -20,6 +20,7 @@ resources:
     type: IncomingWebhook
     configuration:
       webhookName: myInternal
+      payload: testPayload
   - name: RemoteFile
     type: RemoteFile
     configuration:      
