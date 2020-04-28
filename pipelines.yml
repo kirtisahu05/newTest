@@ -16,10 +16,15 @@ resources:
       sourceArtifactory: art
       buildName: myBuild
       buildNumber: 123
-  - name: webhookIntegrationResource
+  - name: IncomingWebhookIntegrationResource
     type: IncomingWebhook
     configuration:
-      webhookName: myInternal
+      webhookName: myIncoming
+      payload: testPayload
+  - name: OutgoingWebhookIntegrationResource
+    type: OutgoingWebhook
+    configuration:
+      webhookName: myOutgoing
       payload: testPayload
   - name: RemoteFile
     type: RemoteFile
