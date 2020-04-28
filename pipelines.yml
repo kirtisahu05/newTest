@@ -20,12 +20,10 @@ resources:
     type: IncomingWebhook
     configuration:
       webhookName: myIncoming
-      payload: testPayload
   - name: outgoingWebhookIntegrationResource
     type: OutgoingWebhook
     configuration:
       webhookName: myOutgoing
-      payload: testPayload
   - name: RemoteFile
     type: RemoteFile
     configuration:      
@@ -41,11 +39,13 @@ resources:
         - 1.2.3.4
         - 1.2.3.5
         - 1.2.3.6
+        - 1.2.3.7
+        - 1.2.3.8
   - name: Aql
     type: Aql
     configuration:
       sourceArtifactory: art
-      query: 'query_test_123'
+      query: 'query_test_new'
       addedProperties: #optional
         key1: val1
         key2: val2
