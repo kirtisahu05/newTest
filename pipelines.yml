@@ -27,10 +27,10 @@ resources:
   - name: RemoteFile
     type: RemoteFile
     configuration:      
-      source: dummyFileServer
-      fileLocation: 'fileLocation_test'
-      fileName: 'fileName_test'
-      fileDateTime: 'fileDateTime_test'
+      source: dummyFileServer2
+      fileLocation: 'fileLocation_test2'
+      fileName: 'fileName_test2'
+      fileDateTime: 'fileDateTime_test2'
   - name: VmCluster
     type: VmCluster
     configuration:
@@ -41,11 +41,13 @@ resources:
         - 1.2.3.6
         - 1.2.3.7
         - 1.2.3.8
+        - 1.2.3.1
+        - 1.2.3.3
   - name: Aql
     type: Aql
     configuration:
       sourceArtifactory: art
-      query: 'query_test_old'
+      query: 'query_test_2'
       addedProperties: #optional
         key1: val1
         key2: val2
@@ -60,8 +62,8 @@ resources:
     type: ReleaseBundle
     configuration:
       sourceDistribution: dist_test
-      name: 'name_test'
-      version: 'version_test'
+      name: 'name_test2'
+      version: 'version_test2'
       isSigned: false
   - name: DistributionRule
     type: DistributionRule
