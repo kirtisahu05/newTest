@@ -16,12 +16,12 @@ resources:
       sourceArtifactory: art
       buildName: myBuild
       buildNumber: 123
-  - name: IncomingWebhookIntegrationResource
+  - name: incomingWebhookIntegrationResource
     type: IncomingWebhook
     configuration:
       webhookName: myIncoming
       payload: testPayload
-  - name: OutgoingWebhookIntegrationResource
+  - name: outgoingWebhookIntegrationResource
     type: OutgoingWebhook
     configuration:
       webhookName: myOutgoing
@@ -91,7 +91,8 @@ pipelines:
             - name: Image_test
             - name: gitResource_test
             - name: myBuildInfo
-            - name: webhookIntegrationResource
+            - name: incomingWebhookIntegrationResource
+            - name: outgoingWebhookIntegrationResource
             - name: RemoteFile
             - name: VmCluster
             - name: Aql
