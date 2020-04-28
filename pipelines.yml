@@ -45,7 +45,7 @@ resources:
     type: Aql
     configuration:
       sourceArtifactory: art
-      query: 'query_test_new'
+      query: 'query_test_old'
       addedProperties: #optional
         key1: val1
         key2: val2
