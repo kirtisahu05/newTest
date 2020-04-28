@@ -80,6 +80,7 @@ pipelines:
       environmentVariables:
         pipeEnv1: pipe-value1
         pipeEnv2: pipe-value2
+        readOnly: true
     steps:
       - name: job
         type: Bash
