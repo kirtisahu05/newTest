@@ -76,6 +76,10 @@ resources:
 
 pipelines:
   - name: res_test
+    configuration:
+      environmentVariables:
+        pipeEnv1: pipe-value1
+        pipeEnv1: pipe-value2
     steps:
       - name: job
         type: Bash
@@ -93,8 +97,8 @@ pipelines:
             - name: ReleaseBundle
             - name: DistributionRule
           environmentVariables:
-            - pipeEnv1: pipe-value1
-            - pipeEnv2: pipe-value2
+            - stepEnv1: step-value1
+            - stepEnv1: step-value2
         execution:
           onExecute:
             - echo "asd"
