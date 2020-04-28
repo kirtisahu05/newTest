@@ -27,7 +27,7 @@ resources:
   - name: RemoteFile
     type: RemoteFile
     configuration:      
-      source: dummyFileServer2
+      source: dummyFileServer
       fileLocation: 'fileLocation_test2'
       fileName: 'fileName_test2'
       fileDateTime: 'fileDateTime_test2'
