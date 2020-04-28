@@ -92,6 +92,9 @@ pipelines:
             - name: Aql
             - name: ReleaseBundle
             - name: DistributionRule
+          environmentVariables:
+            - pipeEnv1: pipe-value1
+            - pipeEnv2: pipe-value2
         execution:
           onExecute:
             - echo "asd"
