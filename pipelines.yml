@@ -99,8 +99,9 @@ pipelines:
             - name: ReleaseBundle
             - name: DistributionRule
           environmentVariables:
-            stepEnv1: step-value1
-            stepEnv2: step-value2
+            normal:
+              stepEnv1: step-value1
+              stepEnv2: step-value2
         execution:
           onExecute:
             - echo "asd"
