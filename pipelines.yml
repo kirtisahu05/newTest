@@ -1,10 +1,10 @@
 resources:
-  - name: Image_test
-    type: Image
-    configuration:
-       registry: docker_kirti
-       imageName: imageRepo/imageName
-       imageTag: initial
+#   - name: Image_test
+#     type: Image
+#     configuration:
+#        registry: docker_kirti
+#        imageName: imageRepo/imageName
+#        imageTag: initial
   - name: gitResource_test
     type: GitRepo
     configuration:
@@ -16,65 +16,65 @@ resources:
       sourceArtifactory: art
       buildName: myBuild
       buildNumber: 123
-  - name: incomingWebhookIntegrationResource
-    type: IncomingWebhook
-    configuration:
-      webhookName: myIncoming
-  - name: outgoingWebhookIntegrationResource
-    type: OutgoingWebhook
-    configuration:
-      webhookName: myOutgoing
-  - name: RemoteFile
-    type: RemoteFile
-    configuration:      
-      source: dummyFileServer
-      fileLocation: 'fileLocation_test'
-      fileName: 'fileName_test'
-      fileDateTime: 'fileDateTime_test'
-  - name: VmCluster
-    type: VmCluster
-    configuration:
-      sshKey: ssh_key_test
-      targets:
-        - 1.2.3.4
-        - 1.2.3.5
-        - 1.2.3.6
-        - 1.2.3.7
-        - 1.2.3.8
-        - 1.2.3.1
-        - 1.2.3.3
-  - name: Aql
-    type: Aql
-    configuration:
-      sourceArtifactory: art
-      query: 'query_test_2'
-      addedProperties: #optional
-        key1: val1
-        key2: val2
-      mappings: #optional
-        - name: mapping1
-          input: asd
-          output: asd
-        - name: mapping2
-          input: asd
-          output: asd
-  - name: ReleaseBundle
-    type: ReleaseBundle
-    configuration:
-      sourceDistribution: dist_test
-      name: 'name_test2'
-      version: 'version_test2'
-      isSigned: false
-  - name: DistributionRule
-    type: DistributionRule
-    configuration:     
-      sourceDistribution: dist_test     
-      serviceName: 'service_test'
-      siteName: 'site_name'
-      cityName: 'city_name'
-      countryCodes:
-        - 'IN'
-        - 'AUS'
+#   - name: incomingWebhookIntegrationResource
+#     type: IncomingWebhook
+#     configuration:
+#       webhookName: myIncoming
+#   - name: outgoingWebhookIntegrationResource
+#     type: OutgoingWebhook
+#     configuration:
+#       webhookName: myOutgoing
+#   - name: RemoteFile
+#     type: RemoteFile
+#     configuration:      
+#       source: dummyFileServer
+#       fileLocation: 'fileLocation_test'
+#       fileName: 'fileName_test'
+#       fileDateTime: 'fileDateTime_test'
+#   - name: VmCluster
+#     type: VmCluster
+#     configuration:
+#       sshKey: ssh_key_test
+#       targets:
+#         - 1.2.3.4
+#         - 1.2.3.5
+#         - 1.2.3.6
+#         - 1.2.3.7
+#         - 1.2.3.8
+#         - 1.2.3.1
+#         - 1.2.3.3
+#   - name: Aql
+#     type: Aql
+#     configuration:
+#       sourceArtifactory: art
+#       query: 'query_test_2'
+#       addedProperties: #optional
+#         key1: val1
+#         key2: val2
+#       mappings: #optional
+#         - name: mapping1
+#           input: asd
+#           output: asd
+#         - name: mapping2
+#           input: asd
+#           output: asd
+#   - name: ReleaseBundle
+#     type: ReleaseBundle
+#     configuration:
+#       sourceDistribution: dist_test
+#       name: 'name_test2'
+#       version: 'version_test2'
+#       isSigned: false
+#   - name: DistributionRule
+#     type: DistributionRule
+#     configuration:     
+#       sourceDistribution: dist_test     
+#       serviceName: 'service_test'
+#       siteName: 'site_name'
+#       cityName: 'city_name'
+#       countryCodes:
+#         - 'IN'
+#         - 'AUS'
 
 pipelines:
   - name: res_test
@@ -90,16 +90,16 @@ pipelines:
           affinityGroup: bldGroupTest
           priority: 0
           inputResources:
-            - name: Image_test
+#             - name: Image_test
             - name: gitResource_test
             - name: myBuildInfo
-            - name: incomingWebhookIntegrationResource
-            - name: outgoingWebhookIntegrationResource
-            - name: RemoteFile
-            - name: VmCluster
-            - name: Aql
-            - name: ReleaseBundle
-            - name: DistributionRule
+#             - name: incomingWebhookIntegrationResource
+#             - name: outgoingWebhookIntegrationResource
+#             - name: RemoteFile
+#             - name: VmCluster
+#             - name: Aql
+#             - name: ReleaseBundle
+#             - name: DistributionRule
           environmentVariables:
             stepEnv1: step-value1
             stepEnv2: step-value2
