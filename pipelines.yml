@@ -5,17 +5,17 @@ resources:
 #        registry: docker_kirti
 #        imageName: imageRepo/imageName
 #        imageTag: initial
-  - name: gitResource_test
-    type: GitRepo
-    configuration:
-      gitProvider: github_kirti
-      path: kirtisahu05/ymlTest
-  - name: myBuildInfo
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: art
-      buildName: myBuild
-      buildNumber: 123
+#   - name: gitResource_test
+#     type: GitRepo
+#     configuration:
+#       gitProvider: github_kirti
+#       path: kirtisahu05/ymlTest
+#   - name: myBuildInfo
+#     type: BuildInfo
+#     configuration:
+#       sourceArtifactory: art
+#       buildName: myBuild
+#       buildNumber: 123
   - name: incomingWebhookIntegrationResource
     type: IncomingWebhook
     configuration:
@@ -91,8 +91,8 @@ pipelines:
           priority: 0
           inputResources:
 #             - name: Image_test
-            - name: gitResource_test
-            - name: myBuildInfo
+#             - name: gitResource_test
+#             - name: myBuildInfo
             - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
 #             - name: RemoteFile
