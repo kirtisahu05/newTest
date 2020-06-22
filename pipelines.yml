@@ -91,9 +91,9 @@ pipelines:
           priority: 0
           inputResources:
 #             - name: Image_test
-#             - name: gitResource_test
+            - name: gitResource_test
 #             - name: myBuildInfo
-            - name: incomingWebhookIntegrationResource
+#             - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
 #             - name: RemoteFile
 #             - name: VmCluster
