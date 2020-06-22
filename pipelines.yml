@@ -81,8 +81,8 @@ pipelines:
     configuration:
       environmentVariables:
         readOnly:
-          pipeEnv1:
-          pipeEnv2:
+          pipeEnv1: ''
+          pipeEnv2: ''
     steps:
       - name: job
         type: Bash
