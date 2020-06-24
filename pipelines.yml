@@ -94,6 +94,7 @@ pipelines:
 #             - name: gitResource_test
 #             - name: myBuildInfo
             - name: incomingWebhookIntegrationResource
+            - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
 #             - name: RemoteFile
 #             - name: VmCluster
