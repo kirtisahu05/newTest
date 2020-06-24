@@ -79,10 +79,10 @@ resources:
 pipelines:
   - name: res_test
     configuration:
-      environmentVariables:
-        readOnly:
-          pipeEnv1: ''
-          pipeEnv2: ''
+#       environmentVariables:
+#         readOnly:
+#           pipeEnv1: ''
+#           pipeEnv2: ''
     steps:
       - name: job
         type: Bash
@@ -94,16 +94,15 @@ pipelines:
 #             - name: gitResource_test
 #             - name: myBuildInfo
             - name: incomingWebhookIntegrationResource
-            - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
 #             - name: RemoteFile
 #             - name: VmCluster
 #             - name: Aql
 #             - name: ReleaseBundle
 #             - name: DistributionRule
-          environmentVariables:
-            stepEnv1: step-value1
-            stepEnv2: step-value2
+#           environmentVariables:
+#             stepEnv1: step-value1
+#             stepEnv2: step-value2
         execution:
           onExecute:
             - echo "asd"
