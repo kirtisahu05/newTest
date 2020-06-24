@@ -79,8 +79,8 @@ resources:
 pipelines:
   - name: res_test
     configuration:
-#       environmentVariables:
-#         readOnly:
+      environmentVariables:
+        readOnly:
 #           pipeEnv1: ''
 #           pipeEnv2: ''
     steps:
