@@ -1,10 +1,10 @@
 resources:
-#   - name: Image_test
-#     type: Image
-#     configuration:
-#        registry: docker_kirti
-#        imageName: imageRepo/imageName
-#        imageTag: initial
+  - name: Image_test
+    type: Image
+    configuration:
+       registry: docker_kirti
+       imageName: imageRepo/imageName
+       imageTag: initial
 #   - name: gitResource_test
 #     type: GitRepo
 #     configuration:
@@ -100,6 +100,8 @@ pipelines:
 #             - name: Aql
 #             - name: ReleaseBundle
 #             - name: DistributionRule
+          outputResources:
+            - name: Image_test
 #           environmentVariables:
 #             stepEnv1: step-value1
 #             stepEnv2: step-value2
