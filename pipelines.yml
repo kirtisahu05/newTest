@@ -1,15 +1,15 @@
 resources:
-  - name: Image_test
-    type: Image
-    configuration:
-       registry: docker_kirti
-       imageName: imageRepo/imageName
-       imageTag: initial
-#   - name: gitResource_test
-#     type: GitRepo
+#   - name: Image_test
+#     type: Image
 #     configuration:
-#       gitProvider: github_kirti
-#       path: kirtisahu05/ymlTest
+#        registry: docker_kirti
+#        imageName: imageRepo/imageName
+#        imageTag: initial
+  - name: gitResource_test
+    type: GitRepo
+    configuration:
+      gitProvider: github_kirti
+      path: kirtisahu05/ymlTest
 #   - name: myBuildInfo
 #     type: BuildInfo
 #     configuration:
@@ -78,11 +78,11 @@ resources:
 
 pipelines:
   - name: res_test
-#     configuration:
-#       environmentVariables:
-#         readOnly:
-#           pipeEnv1: ''
-#           pipeEnv2: ''
+    configuration:
+      environmentVariables:
+        readOnly:
+          pipeEnv1: ''
+          pipeEnv2: ''
     steps:
       - name: job
         type: Bash
@@ -91,9 +91,9 @@ pipelines:
           priority: 0
           inputResources:
 #             - name: Image_test
-#             - name: gitResource_test
+            - name: gitResource_test
 #             - name: myBuildInfo
-            - name: incomingWebhookIntegrationResource
+#             - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
 #             - name: RemoteFile
 #             - name: VmCluster
@@ -102,9 +102,9 @@ pipelines:
 #             - name: DistributionRule
           outputResources:
             - name: Image_test
-#           environmentVariables:
-#             stepEnv1: step-value1
-#             stepEnv2: step-value2
+          environmentVariables:
+            stepEnv1: step-value1
+            stepEnv2: step-value2
         execution:
           onExecute:
             - echo "asd"
