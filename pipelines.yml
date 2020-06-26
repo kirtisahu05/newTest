@@ -1,21 +1,21 @@
 resources:
-  - name: propertyBag_resource
-    type: PropertyBag
+#   - name: propertyBag_resource
+#     type: PropertyBag
+#     configuration:
+#       key1: value1
+#       key2: value2
+
+  - name: Image_test
+    type: Image
     configuration:
-      key1: value1
-      key2: value2
-  
-#   - name: Image_test
-#     type: Image
-#     configuration:
-#        registry: docker_kirti
-#        imageName: imageRepo/imageName
-#        imageTag: initial
-#   - name: gitResource_test
-#     type: GitRepo
-#     configuration:
-#       gitProvider: github_kirti
-#       path: kirtisahu05/ymlTest
+       registry: docker_kirti
+       imageName: imageRepo/imageName
+       imageTag: initial
+  - name: gitResource_test
+    type: GitRepo
+    configuration:
+      gitProvider: github_kirti
+      path: kirtisahu05/ymlTest
 #   - name: myBuildInfo
 #     type: BuildInfo
 #     configuration:
@@ -96,9 +96,9 @@ pipelines:
           affinityGroup: bldGroupTest
           priority: 0
           inputResources:
-#             - name: Image_test
-#             - name: gitResource_test
-            - name: propertyBag_resource
+            - name: Image_test
+            - name: gitResource_test
+#             - name: propertyBag_resource
 #             - name: myBuildInfo
 #             - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
