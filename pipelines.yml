@@ -1,4 +1,10 @@
 resources:
+  - name: propertyBag_resource
+    type: PropertyBag
+    configuration:
+      key1: value1
+      key2: value2
+  
   - name: Image_test
     type: Image
     configuration:
@@ -92,6 +98,7 @@ pipelines:
           inputResources:
 #             - name: Image_test
             - name: gitResource_test
+            - name: propertyBag_resource
 #             - name: myBuildInfo
 #             - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
