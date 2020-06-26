@@ -96,9 +96,9 @@ pipelines:
           affinityGroup: bldGroupTest
           priority: 0
           inputResources:
-            - name: Image_test
+#             - name: Image_test
 #             - name: gitResource_test
-#             - name: propertyBag_resource
+            - name: propertyBag_resource
 #             - name: myBuildInfo
 #             - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
