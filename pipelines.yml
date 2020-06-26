@@ -5,17 +5,17 @@ resources:
       key1: value1
       key2: value2
   
-  - name: Image_test
-    type: Image
-    configuration:
-       registry: docker_kirti
-       imageName: imageRepo/imageName
-       imageTag: initial
-  - name: gitResource_test
-    type: GitRepo
-    configuration:
-      gitProvider: github_kirti
-      path: kirtisahu05/ymlTest
+#   - name: Image_test
+#     type: Image
+#     configuration:
+#        registry: docker_kirti
+#        imageName: imageRepo/imageName
+#        imageTag: initial
+#   - name: gitResource_test
+#     type: GitRepo
+#     configuration:
+#       gitProvider: github_kirti
+#       path: kirtisahu05/ymlTest
 #   - name: myBuildInfo
 #     type: BuildInfo
 #     configuration:
@@ -97,8 +97,8 @@ pipelines:
           priority: 0
           inputResources:
             - name: Image_test
-            - name: gitResource_test
-            - name: propertyBag_resource
+#             - name: gitResource_test
+#             - name: propertyBag_resource
 #             - name: myBuildInfo
 #             - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
