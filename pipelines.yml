@@ -20,10 +20,10 @@ resources:
     type: IncomingWebhook
     configuration:
       webhookName: myIncoming
-#   - name: outgoingWebhookIntegrationResource
-#     type: OutgoingWebhook
-#     configuration:
-#       webhookName: myOutgoing
+  - name: outgoingWebhookIntegrationResource
+    type: OutgoingWebhook
+    configuration:
+      webhookName: myOutgoing
 #   - name: RemoteFile
 #     type: RemoteFile
 #     configuration:      
@@ -93,8 +93,8 @@ pipelines:
 #             - name: Image_test
 #             - name: gitResource_test
 #             - name: myBuildInfo
-            - name: incomingWebhookIntegrationResource
-#             - name: outgoingWebhookIntegrationResource
+#             - name: incomingWebhookIntegrationResource
+            - name: outgoingWebhookIntegrationResource
 #             - name: RemoteFile
 #             - name: VmCluster
 #             - name: Aql
