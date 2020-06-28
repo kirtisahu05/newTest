@@ -81,8 +81,8 @@ pipelines:
 #     configuration:
 #       environmentVariables:
 #         readOnly:
-#           pipeEnv1: ''
-#           pipeEnv2: ''
+          pipeEnv1: ''
+          pipeEnv2: ''
     steps:
       - name: job
         type: Bash
@@ -103,8 +103,8 @@ pipelines:
 #           outputResources:
 #             - name: Image_test
 #           environmentVariables:
-#             stepEnv1: step-value1
-#             stepEnv2: step-value2
+            stepEnv1: step-value1
+            stepEnv2: step-value2
         execution:
           onExecute:
             - echo "asd"
