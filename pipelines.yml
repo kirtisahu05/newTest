@@ -90,7 +90,7 @@ pipelines:
           pipeEnv1: ''
           pipeEnv2: ''
     steps:
-      - name: job
+      - name: step
         type: Bash
         configuration:
           affinityGroup: bldGroupTest
@@ -114,4 +114,22 @@ pipelines:
             stepEnv2: step-value2
         execution:
           onExecute:
-            - echo "asd"
+            - echo "step-1"
+
+      - name: step-2
+        type: Bash
+        configuration:
+          affinityGroup: bldGroupTest
+          priority: 0
+          inputSteps:
+            - name: step
+          outputResources:
+            - name: Image_test
+          environmentVariables:
+            stepEnv1: step-2-value1
+            stepEnv2: step-2-value2
+        execution:
+          onExecute:
+            - echo "step-2"
+
+
