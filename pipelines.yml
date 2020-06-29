@@ -116,8 +116,8 @@ pipelines:
           priority: 0
           inputSteps:
             - name: step
-          outputResources:
-            - name: Image_test
+#           outputResources:
+#             - name: Image_test
           environmentVariables:
             stepEnv1: step-2-value1
             stepEnv2: step-2-value2
