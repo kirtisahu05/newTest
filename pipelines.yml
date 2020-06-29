@@ -109,7 +109,7 @@ pipelines:
           onExecute:
             - echo "step-1"
 
-      - name: step-2
+      - name: step_2
         type: Bash
         configuration:
           affinityGroup: bldGroupTest
