@@ -107,6 +107,7 @@ pipelines:
             stepEnv2: step-value2
         execution:
           onExecute:
+            - sleep 30
             - echo "step-1"
 
       - name: step_2
@@ -123,4 +124,5 @@ pipelines:
             stepEnv2: step-2-value2
         execution:
           onExecute:
+            - sleep 30
             - echo "step-2"
