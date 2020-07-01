@@ -28,9 +28,9 @@ resources:
     type: RemoteFile
     configuration:      
       source: dummyFileServer
-      fileLocation: 'fileLocation_test'
-      fileName: 'fileName_test'
-      fileDateTime: 'fileDateTime_test'
+      fileLocation: 'fileLocation_test_ver2'
+      fileName: 'fileName_test_ver2'
+      fileDateTime: 'fileDateTime_test_ver2'
 #   - name: VmCluster
 #     type: VmCluster
 #     configuration:
