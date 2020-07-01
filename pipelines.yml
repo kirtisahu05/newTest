@@ -24,13 +24,13 @@ resources:
     type: OutgoingWebhook
     configuration:
       webhookName: myOutgoing
-  - name: RemoteFile
-    type: RemoteFile
-    configuration:      
-      source: dummyFileServer
-      fileLocation: 'fileLocation_test__ver2'
-      fileName: 'fileName_test_ver2'
-      fileDateTime: 'fileDateTime_test_ver2'
+#   - name: RemoteFile
+#     type: RemoteFile
+#     configuration:      
+#       source: dummyFileServer
+#       fileLocation: 'fileLocation_test__ver2'
+#       fileName: 'fileName_test_ver2'
+#       fileDateTime: 'fileDateTime_test_ver2'
 #   - name: VmCluster
 #     type: VmCluster
 #     configuration:
@@ -95,7 +95,7 @@ pipelines:
 #             - name: myBuildInfo
 #             - name: incomingWebhookIntegrationResource
 #             - name: outgoingWebhookIntegrationResource
-            - name: RemoteFile
+#             - name: RemoteFile
 #             - name: VmCluster
 #             - name: Aql
 #             - name: ReleaseBundle
